@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/fontawesome-free-6.7.2-web/css/all.css">
+    <title>DN|Portfolio</title>
+</head>
+<style>
+    /* default */
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body{
+        max-width: 1515px;
+        margin: 0 auto;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 30px 100px;
+    }
+
+  /*   header */
+
+    header{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        align-items: center;
+    }
+
+    .bars {
+        display: none;
+    }
+
+    .navigations nav ul{
+        display: flex;
+        gap: 20px;
+        font-size: 20px;
+        list-style: none;
+    }
+
+    .navigations nav ul a {
+        text-decoration: none;
+        color: black;
+    }
+
+  /*   home */
+
+    .home{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .showImg img {
+        height: 500px;
+        width: 500px;
+    }
+
+    .homeHeading h1{
+        font-family: serif;
+    }
+
+    .words{
+        display: inline-flex;
+        height: 1em;
+        overflow: hidden;
+    }
+
+    .words span {
+            display: block;
+            font-style: italic;
+            animation: slideWords 6s linear infinite;
+    }
+
+    @keyframes slideWords {
+            0% { transform: translateY(0%); }
+            50% { transform: translateY(-240%); }
+            100% { transform: translateY(0%); }
+        }
+
+    .homeparagraph p{
+        margin:20px 0;
+        font-size: 20px;
+        font-family: sans-serif;
+        line-height: 120%;
+        text-align: left;
+    }
+
+    .home button{
+        padding: 15px 20px;
+        border-radius: 30px;
+    }
+
+        /* about */
+
+    .about{
+        border: 1px solid black;
+        border-radius: 20px;
+        margin: 30px 0;
+        padding: 20px 30px;
+    }
+
+    .about h1{
+        text-align: center;
+        font-family: serif;
+    }
+
+    .about p {
+        margin: 20px 0;
+        line-height: 150%;
+        font-family: sans-serif;
+    }
+
+    /* projects */
+
+    .projects .projectcard{
+        margin:30px 0;
+        display: flex;
+        border: 1px solid black;
+        border-radius: 20px;
+        justify-content: space-around;
+        align-items: center;
+        padding: 20px 30px;
+    }
+
+    .projectcard .details{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .proj_thumbnail img{
+        border: 2px solid goldenrod;
+        height: auto;
+        width: 280px;
+        border-radius: 15px;
+        transform: rotateY(-15deg) rotateX(5deg);
+        box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.6);
+        transition: transform 0.5s ease, box-shadow 0.5s ease;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+    }
+
+    .proj_thumbnail img:hover{
+        transform: rotateY(0deg) rotateX(0deg);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.7); 
+    }
+
+    .button button{
+        padding: 5px 10px;
+        border-radius: 10px;
+    }
+
+    .button button a{
+        text-decoration: none;
+        color: black;
+    }
+        
+
+    /* skill */
+
+    .skills{
+        overflow: hidden;
+    }
+
+    .skill{
+        display: flex;
+        list-style: none;
+        margin: 20px 0;
+        justify-content: space-evenly;
+        animation: scroll 30s linear infinite;
+    }
+
+    .skill li{
+        white-space: nowrap;
+        border: 1px solid black;
+        padding: 12px 18px;
+        border-radius: 12px;
+        font-weight: bold;
+    }
+
+    @keyframes scroll{
+        from {
+            transform: translateX(100%);
+        }
+
+        to {
+            transform: translateX(-100%);
+        }
+    }
+
+
+        /* responsiveness */
+
+    @media (max-width: 767px){
+        body {
+            padding: 25px 20px;
+        }
+
+        header {
+            position: relative;
+            margin-bottom: 15px;
+        }
+
+        header .navigations {
+            display: none;
+        }
+
+        .Smallnavigations{
+            position: absolute;
+            background-color: antiquewhite;
+            top: 29px;
+            z-index: 100;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .Smallnavigations nav{
+            width: 100%;
+        }
+
+        .Smallnavigations ul{
+            list-style: none;
+        }
+
+        .Smallnavigations ul li {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 60px;
+        }
+
+        .Smallnavigations ul li:hover {
+            border: 1px solid black;
+        }
+
+        .Smallnavigations nav ul li a{
+            text-align: center;
+            display: block;
+            padding: 20px;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+        }
+
+        .bars{
+            display: block;
+        }
+
+        .fa-bars{
+            font-size: 25px;
+        }
+
+        .home{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .showImg{
+            height: 80vh;
+            width: 100%;
+        }
+
+        .showImg img {
+            height: 100%;
+            width: 100%;
+        }
+
+        .projects h1{
+            text-align: center;
+        }
+
+        .projects .projectcard{
+            display: flex;
+            flex-direction: column-reverse;
+            justify-content: center;
+        }
+
+        .proj_thumbnail img{
+            width: 100%;
+            height: auto;
+            transform: rotateY(0deg) rotateX(0deg);
+            box-shadow: 0 15px 35px rgba(0,0,0,0); 
+
+
+        }
+
+        .proj_thumbnail img:hover{
+        transform: rotateY(0deg) rotateX(0deg);
+        box-shadow: none; 
+    }
+        
+    }
+
+    @media (max-width: 500px){
+
+        .showImg{
+            height: 50vh;
+            width: 100%;
+        }
+
+    }
+
+</style>
+<body>
+    <header>
+        <div class="logo">
+            <img src="/logo.svg" alt="logo" style="height: 25px;width: 25px;">   
+        </div>
+    
+        <div class="navigations">
+            <nav>
+                <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="bars" id="bars" >
+            <i class="fa-solid fa-bars"></i>
+        </div>
+
+    <div class="Smallnavigations" id="Smallnavigations" style="display: none;">
+        <nav>
+            <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contacts">Contacts</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    </header>
+
+    <main>
+        <div class="home" id="home">
+            <div class="showImg">
+                <img src="/passport.jpg" alt="showImg">
+            </div>
+
+            <div class="homeparagraph">
+                <div class="homeHeading">
+                    <h1>Hey, I'm a 
+                        <div class="words">
+                            <span>
+                                <div>Developer</div>
+                                <div>Designer</div>
+                                <div>DN</div>
+                            </span>
+                        </div>
+                    </h1>
+                </div>
+
+                <p>Software Engineeering Student | Inspiring Website Developer.
+                    I specialize in building clean and user-friendly web applications using modern web technologies.
+                    Focused performance, and great user experience on both desktop and mobile.
+                </p>
+                <button>View Projects</button>
+            </div>        
+        </div>
+
+        <div class="about" id="about">
+            <h1>About Me</h1>
+            <p>
+                I'm a Software Engineering student with a strong interest in website development.
+                I enjoy building user-friendly and efficient desktop & mobile web applications that solve real-world problems.
+
+                I have experience working with HTML ,CSS ,JAVASCRIPT and modern development tools like NodeJS with Express and Git.
+                I'm continuously learning and improving my skills by building projects and exploring new technologies.
+
+                My goal is to become a skilled website developer and contribute to impactful software solutions.
+            </p>
+        </div>
+
+        <div class="projects">
+            <h1>My Website Projects</h1>
+
+            <div class="projectcard">
+                <div class="details">
+                    <h3>Treasure Management System</h3>
+                    <p class="description">Developed a full-featured online shopping website with product browsing, cart, and secure checkout.</p>
+                    <p><strong>Technologies:</strong> Java, JavaScript, HTML, CSS, MySQL</p>
+                    <div class="button"><button><a href="#" class="btn">View Project</a></button></div>
+                    </div>
+                <div class="proj_thumbnail"><img src="/projectthumb.png" alt="project thumbnail"></div>
+            </div>
+            
+            <div class="projectcard">
+                <div class="details">
+                    <h3>Treasure Management System</h3>
+                    <p class="description">Developed a full-featured online shopping website with product browsing, cart, and secure checkout.</p>
+                    <p><strong>Technologies:</strong> Java, JavaScript, HTML, CSS, MySQL</p>
+                    <div class="button"><button><a href="#" class="btn">View Project</a></button></div>
+                    </div>
+                <div class="proj_thumbnail"><img src="/projectthumb.png" alt="project thumbnail"></div>
+            </div>
+            
+            <div class="projectcard">
+                <div class="details">
+                    <h3>Treasure Management System</h3>
+                    <p class="description">Developed a full-featured online shopping website with product browsing, cart, and secure checkout.</p>
+                    <p><strong>Technologies:</strong> Java, JavaScript, HTML, CSS, MySQL</p>
+                    <div class="button"><button><a href="#" class="btn">View Project</a></button></div>
+                    </div>
+                <div class="proj_thumbnail"><img src="/projectthumb.png" alt="project thumbnail"></div>
+            </div>
+            
+        </div>
+
+        <div class="skills">
+            <h3>Skills Learned</h3>
+            <ul class="skill">
+                <li><i class="fa-brands fa-java"> </i> Java</li>
+                <li><i class="fa-brands fa-python"> </i> Python</li>
+                <li><i class="fa-brands fa-js"> </i> JavaScript</li>
+                <li><i class="fa-brands fa-node"> </i> NodeJs</li>
+                <li><i class="fa-brands fa-html5"> </i> Html</li>
+                <li><i class="fa-brands fa-css"> </i> Css</li>
+                <li><i class="fa-brands fa-github"> </i> Github</li>
+                <li><i class="fa-solid fa-database"> </i> Mysql</li>
+            </ul>
+        </div>
+
+        <div class="contacts">
+            <h2>Contact Me</h2>
+
+          <!-- modify this form HTML and place wherever you want your form -->
+            <form id="my-form" action="https://formspree.io/f/xzdkpkqz" method="POST">
+                <input type="hidden" name="_subject" value="New message from portfolio">
+                <div class="fs-field">
+                    <label>Email:</label>
+                    <input type="email" name="email" />
+                    <p>This will help me repond to you via email</p>
+                </div>
+                
+                <div class="fs-field">
+                    <label>Message:</label>
+                    <input type="text" name="message" />
+                    <p>What would you like to discuss?</p>
+                </div>
+
+                <button id="my-form-button">Submit</button>
+                <p id="my-form-status"></p>
+            </form>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>&copy;2026 Copyrights under DN</p>
+        <p>Follow me on</p>
+    </footer>
+
+    <script>
+        const bars=document.getElementById('bars');
+        const nav=document.getElementById('Smallnavigations');
+        const links=document.querySelectorAll('#Smallnavigations a');
+
+        bars.addEventListener('click',()=>{
+
+            if(nav.style.display === "none"){
+                nav.style.display='flex';
+            } else {
+                nav.style.display="none";
+            }
+        })
+
+        links.forEach(link => {
+            link.addEventListener('click',()=>{
+                nav.style.display='none';
+            })
+        })
+
+      /*   contact me formspree submission */
+
+        var form = document.getElementById("my-form");
+  
+        async function handleSubmit(event) {
+            event.preventDefault();
+            var status = document.getElementById("my-form-status");
+            var data = new FormData(event.target);
+            fetch(event.target.action, {
+            method: form.method,
+            body: data,
+            headers: {
+                'Accept': 'application/json'
+            }
+            }).then(response => {
+            if (response.ok) {
+                status.innerHTML = "Thanks for your submission!";
+                form.reset()
+            } else {
+                response.json().then(data => {
+                if (Object.hasOwn(data, 'errors')) {
+                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                } else {
+                    status.innerHTML = "Oops! There was a problem submitting your form"
+                }
+                })
+            }
+            }).catch(error => {
+            status.innerHTML = "Oops! There was a problem submitting your form"
+            });
+        }
+        form.addEventListener("submit", handleSubmit)
+
+    </script>
+</body>
+</html>
