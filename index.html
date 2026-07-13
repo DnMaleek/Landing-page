@@ -70,7 +70,6 @@
         padding: 0;
         box-sizing: border-box;
         transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-
     }
 
     body{
@@ -174,7 +173,7 @@
         font-weight: 500;
     }
 
-      .navigations nav ul a:hover {
+    .navigations nav ul a:hover {
         color: var(--accent);
     }
 
@@ -184,9 +183,7 @@
         gap: 25px;
     }
 
-
     /* ===================== HOME ===================== */
-
 
     .home{
         display: flex;
@@ -220,18 +217,17 @@
     }
 
     .words span {
-            display: block;
-            font-style: italic;
-            animation: slideWords 6s linear infinite;
+        display: block;
+        font-style: italic;
+        animation: slideWords 6s linear infinite;
     }
 
     @keyframes slideWords {
-            0% { transform: translateY(0%); }
-            50% { transform: translateY(-240%); }
-            100% { transform: translateY(0%); }
-        }
+        0% { transform: translateY(0%); }
+        50% { transform: translateY(-240%); }
+        100% { transform: translateY(0%); }
+    }
 
-        
     .homeparagraph {
         display: flex;
         flex-direction: column;
@@ -239,7 +235,7 @@
     }
 
     .homeparagraph p{
-       font-size: 18px;
+        font-size: 18px;
         font-family: sans-serif;
         line-height: 1.7;
         color: var(--text-secondary);
@@ -247,7 +243,7 @@
     }
 
     .home button{
-         padding: 14px 30px;
+        padding: 14px 30px;
         border-radius: 40px;
         border: 2px solid var(--btn-border);
         background-color: var(--btn-bg);
@@ -261,7 +257,7 @@
         transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-     .home button:hover {
+    .home button:hover {
         background-color: var(--accent);
         border-color: var(--accent);
         color: #fff;
@@ -269,7 +265,7 @@
         box-shadow: 0 8px 20px var(--shadow);
     }
 
-        /* about */
+    /* ===================== ABOUT ===================== */
 
     .about{
         border: 1px solid var(--border-color);
@@ -289,7 +285,7 @@
         position: relative;
     }
 
-     .about h1::after {
+    .about h1::after {
         content: '';
         display: block;
         width: 50px;
@@ -300,118 +296,200 @@
     }
 
     .about p {
-         margin: 20px 0;
+        margin: 20px 0;
         line-height: 1.8;
         font-family: sans-serif;
         color: var(--text-secondary);
         font-size: 16px;
     }
 
-  /* ===================== PROJECTS ===================== */
+    /* ===================== PROJECTS ===================== */
 
-  .projects h1 {
+    .projects h1 {
         font-family: 'Georgia', serif;
         font-size: 2rem;
         color: var(--text-primary);
         margin-bottom: 10px;
     }
 
-    .projects .projectcard{
-        margin: 25px 0;
-        display: flex;
-        border: 1px solid var(--border-color);
-        border-radius: 20px;
-        justify-content: space-around;
-        align-items: center;
-        padding: 30px 40px;
-        background-color: var(--bg-card);
-        box-shadow: 0 4px 20px var(--shadow);
-        transition: box-shadow 0.3s ease, transform 0.3s ease;
+    .projects .projectcard {
+        margin: 0 0 64px 0;
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        align-items: stretch;
+        background-color: transparent;
+        position: relative;
     }
 
-    .projects .projectcard:hover {
-        box-shadow: 0 10px 40px var(--shadow-deep);
-        transform: translateY(-3px);
+    /* zigzag rhythm on large screens: even cards mirror the layout */
+    .projects .projectcard:nth-child(even) .projectcard-details {
+        order: 2;
     }
 
-    .projectcard .details{
+    .projects .projectcard:nth-child(even) .proj-thumbnail-wrap {
+        order: 1;
+    }
+
+    .projects .projectcard:nth-child(even) .projectcard-details {
+        padding-left: 56px;
+        padding-right: 0;
+    }
+
+    .projects .projectcard:nth-child(odd) .projectcard-details {
+        padding-right: 56px;
+    }
+
+    .projectcard-details {
         display: flex;
         flex-direction: column;
-        gap: 12px;
+        justify-content: center;
+        gap: 16px;
+        padding: 20px 0;
+        position: relative;
     }
 
-    .projectcard .details h3{
-        font-family: 'Georgia', serif;
-        font-size: 1.3rem;
-        color: var(--text-primary);
-    }
-
-    .projectcard .details .description{
-       font-family: sans-serif;
-       line-height: 1.6;
-       color: var(--text-secondary);
-    }
-
-    .projectcard .details p {
+    .projectcard .project-index {
         font-family: sans-serif;
-        font-size: 14px;
-        color: var(--text-muted);
-    }
-
-    .projectcard .details p strong {
+        font-size: 12px;
+        font-weight: 700;
         color: var(--accent);
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        user-select: none;
     }
 
-    .proj_thumbnail img{
-        border: 2px solid var(--accent);
-        height: auto;
-        width: 280px;
-        border-radius: 15px;
-        transform: rotateY(-15deg) rotateX(5deg);
-        box-shadow: 10px 10px 30px var(--shadow-deep);
-        transition: transform 0.5s ease, box-shadow 0.5s ease;
-        transform-style: preserve-3d;
-        backface-visibility: hidden;
-    }
-
-    .proj_thumbnail img:hover{
-        transform: rotateY(0deg) rotateX(0deg);
-        box-shadow: 0 15px 35px var(--shadow-deep); 
-    }
-
-    .button button{
-        padding: 8px 20px;
-        border-radius: 10px;
-        background-color: transparent;
-        border: 1px solid var(--border-color);
-        cursor: pointer;
-        transition: background-color 0.2s, border-color 0.2s;
-    }
-
-     .button button:hover {
+    .projectcard .project-index::before {
+        content: '';
+        display: inline-block;
+        width: 24px;
+        height: 1px;
         background-color: var(--accent);
+        margin-right: 10px;
+        vertical-align: middle;
+    }
+
+    .projectcard-details h3 {
+        font-family: 'Georgia', serif;
+        font-size: 1.9rem;
+        color: var(--text-primary);
+        line-height: 1.25;
+    }
+
+    .projectcard-details .description {
+        font-family: sans-serif;
+        line-height: 1.75;
+        color: var(--text-secondary);
+        font-size: 15px;
+        max-width: 460px;
+    }
+
+    .projectcard .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0;
+        font-family: 'Courier New', monospace;
+        font-size: 12.5px;
+        color: var(--text-muted);
+        letter-spacing: 0.02em;
+        margin-top: 4px;
+    }
+
+    .projectcard .tech-tags span {
+        padding: 0 12px;
+        border-left: 1px solid var(--border-color);
+        transition: color 0.25s ease;
+    }
+
+    .projectcard .tech-tags span:first-child {
+        padding-left: 0;
+        border-left: none;
+    }
+
+    .projects .projectcard:hover .tech-tags span {
+        color: var(--text-secondary);
+    }
+
+    .projectcard .button {
+        margin-top: 8px;
+    }
+
+    .projectcard .proj-thumbnail-wrap {
+        overflow: hidden;
+        border-radius: 18px;
+        position: relative;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        transition: border-color 0.35s ease;
+        aspect-ratio: 4 / 3;
+    }
+
+    .projects .projectcard:hover .proj-thumbnail-wrap {
         border-color: var(--accent);
     }
 
-    .button button:hover a {
-        color: #fff;
+    .proj_thumbnail {
+        width: 100%;
+        height: 100%;
     }
 
-    .button button a{
+    .proj_thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: grayscale(65%) contrast(1.02);
+        transform: scale(1.02);
+        transition: transform 0.6s ease, filter 0.6s ease;
+    }
+
+    .projects .projectcard:hover .proj_thumbnail img {
+        filter: grayscale(0%);
+        transform: scale(1.07);
+    }
+
+    .button button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    .button button a {
         text-decoration: none;
         color: var(--text-primary);
         font-family: sans-serif;
-        font-size: 14px;
-        font-weight: 600;
-        transition: color 0.2s;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        padding-bottom: 4px;
+        border-bottom: 1px solid var(--text-primary);
+        transition: color 0.2s ease, border-color 0.2s ease, letter-spacing 0.2s ease;
     }
-        
+
+    .button button a::after {
+        content: ' \2192';
+        display: inline-block;
+        transition: transform 0.25s ease;
+    }
+
+    .button button:hover a {
+        color: var(--accent);
+        border-color: var(--accent);
+        letter-spacing: 0.12em;
+    }
+
+    .button button:hover a::after {
+        transform: translateX(4px);
+        display: inline-block;
+    }
 
     /* ===================== SKILLS ===================== */
 
     .skills {
         overflow: hidden;
-        margin: 40px 0;    
+        margin: 40px 0;
     }
 
     .skills h3 {
@@ -444,7 +522,7 @@
         transition: border-color 0.2s, color 0.2s;
     }
 
-     .skill li:hover {
+    .skill li:hover {
         border-color: var(--accent);
         color: var(--accent);
     }
@@ -456,13 +534,12 @@
 
     @keyframes scroll{
         from { transform: translateX(100%); }
-        to {
-            transform: translateX(-100%); }
+        to { transform: translateX(-100%); }
     }
 
     /* ===================== CONTACTS ===================== */
 
-     .contacts h2 {
+    .contacts h2 {
         font-family: 'Georgia', serif;
         font-size: 2rem;
         color: var(--text-primary);
@@ -490,7 +567,7 @@
         letter-spacing: 0.06em;
     }
 
-     .contacts form p {
+    .contacts form p {
         font-size: 13px;
         color: var(--text-muted);
         margin-top: -10px;
@@ -534,7 +611,7 @@
     }
 
     .contacts form button{
-         width: 120px;
+        width: 120px;
         padding: 12px;
         border-radius: 10px;
         align-self: flex-end;
@@ -576,19 +653,19 @@
         color: var(--text-muted);
     }
 
-     .copyrights {
+    .copyrights {
         display: flex;
         align-items: center;
         gap: 10px;
     }
 
-     footer .follow p {
+    footer .follow p {
         margin-bottom: 6px;
         font-size: 13px;
         color: var(--text-muted);
     }
 
-      footer .follow .social-icons {
+    footer .follow .social-icons {
         display: flex;
         gap: 14px;
         font-size: 18px;
@@ -648,25 +725,36 @@
             width: 100%;
         }
 
-         .projects h1 { text-align: center; }
+        .projects h1 { text-align: center; }
 
+        /* Project card mobile overrides */
         .projects .projectcard {
-            flex-direction: column-reverse;
-            justify-content: center;
-            padding: 20px;
+            grid-template-columns: 1fr;
             gap: 20px;
+            margin-bottom: 44px;
         }
 
-        .proj_thumbnail img {
-            width: 100%;
-            height: auto;
-            transform: rotateY(0deg) rotateX(0deg);
-            box-shadow: none;
+        .projects .projectcard:nth-child(even) .projectcard-details,
+        .projects .projectcard:nth-child(odd) .projectcard-details {
+            order: 2;
+            padding-left: 0;
+            padding-right: 0;
         }
 
-        .proj_thumbnail img:hover {
-            transform: none;
-            box-shadow: none;
+        .projects .projectcard:nth-child(even) .proj-thumbnail-wrap {
+            order: 1;
+        }
+
+        .projectcard .proj-thumbnail-wrap {
+            aspect-ratio: 16 / 10;
+        }
+
+        .projectcard-details {
+            padding: 4px 0;
+        }
+
+        .projectcard-details h3 {
+            font-size: 1.5rem;
         }
 
         .about { padding: 25px 20px; }
@@ -681,7 +769,7 @@
             top: 50px;
             z-index: 100;
             justify-content: center;
-            width:100%;
+            width: 100%;
             box-shadow: 0 8px 30px var(--shadow);
         }
 
@@ -699,11 +787,9 @@
             justify-content: center;
             height: 60px;
             border-bottom: 1px solid var(--border-color);
-
         }
 
         .Smallnavigations ul li:last-child { border-bottom: none; }
-
 
         .Smallnavigations ul li:hover {
             background-color: var(--bg-secondary);
@@ -722,38 +808,35 @@
             text-transform: uppercase;
             letter-spacing: 0.08em;
         }
-        
     }
 
     @media (max-width: 500px){
-
-       .showImg {
+        .showImg {
             height: 80vw;
             width: 100%;
         }
-
     }
 
 </style>
 <body>
     <header>
         <div class="logo">
-            <img src="images/logo.svg" alt="logo" >   
+            <img src="images/logo.svg" alt="logo">
         </div>
-    
+
         <div class="navigations">
             <nav>
                 <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contacts">Contacts</a></li>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
                 </ul>
             </nav>
         </div>
 
-         <div class="header-right">
+        <div class="header-right">
             <div class="theme-toggle" id="themeToggle" title="Toggle theme">
                 <span class="toggle-icon"><i class="fa-solid fa-sun"></i></span>
                 <div class="toggle-switch" id="toggleSwitch"></div>
@@ -765,29 +848,33 @@
             </div>
         </div>
 
-    <div class="Smallnavigations" id="Smallnavigations" style="display: none;">
-        <nav>
-            <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contacts">Contacts</a></li>
-            </ul>
-        </nav>
-    </div>
-
+        <div class="Smallnavigations" id="Smallnavigations" style="display: none;">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contacts">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
         <div class="home" id="home">
             <div class="showImg">
-                <img src="images/profile.png" alt="showImg">
+                <!-- data-light and data-dark point to your two images -->
+                <img id="heroImg"
+                     src="images/light.jpg"
+                     data-light="images/light.jpg"
+                     data-dark="images/dark.jpg"
+                     alt="showImg">
             </div>
 
             <div class="homeparagraph">
                 <div class="homeHeading">
-                    <h1>Hey, I'm a 
+                    <h1>Hey, I'm a
                         <div class="words">
                             <span>
                                 <div>Developer</div>
@@ -798,12 +885,12 @@
                     </h1>
                 </div>
 
-                <p>Software Engineeering Student | Inspiring Website Developer.
+                <p>Software Engineering Student | Inspiring Website Developer.
                     I specialize in building clean and user-friendly web applications using modern web technologies.
-                    Focused performance, and great user experience on both desktop and mobile.
+                    Focused on performance, and great user experience on both desktop and mobile.
                 </p>
                 <button>View Projects</button>
-            </div>        
+            </div>
         </div>
 
         <div class="about" id="about">
@@ -812,7 +899,7 @@
                 I'm a Software Engineering student with a strong interest in website development.
                 I enjoy building user-friendly and efficient desktop & mobile web applications that solve real-world problems.
 
-                I have experience working with HTML ,CSS ,JAVASCRIPT and modern development tools like NodeJS with Express and Git.
+                I have experience working with HTML, CSS, JavaScript and modern development tools like NodeJS with Express and Git.
                 I'm continuously learning and improving my skills by building projects and exploring new technologies.
 
                 My goal is to become a skilled website developer and contribute to impactful software solutions.
@@ -822,72 +909,118 @@
         <div class="projects" id="projects">
             <h1>My Website Projects</h1>
 
+            <!-- Project Card 1 -->
             <div class="projectcard">
-                <div class="details">
+                <div class="projectcard-details">
+                    <div class="project-index">01</div>
                     <h3>Treasure Management System</h3>
                     <p class="description">
-                        Built a full-stack Treasure Management System to manage and organize 
-                        valuable items, featuring structured data storage, interactive UI, 
-                        and efficient backend handling. Implemented responsive design and dynamic 
-                        content rendering to enhance user experience.                    
+                        Built a full-stack Treasure Management System to manage and organize
+                        valuable items, featuring structured data storage, interactive UI,
+                        and efficient backend handling. Implemented responsive design and dynamic
+                        content rendering to enhance user experience.
                     </p>
-                    <p><strong>Technologies:</strong> Nodejs, JavaScript, HTML, CSS, MySQL</p>
-                    <div class="button"><button><a href="https://jstreasure-production-0ead.up.railway.app/" class="btn">View Project</a></button></div>
+                    <div class="tech-tags">
+                        <span>Node.js</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>MySQL</span>
                     </div>
-                <div class="proj_thumbnail"><img src="images/treasurejs.png" alt="project thumbnail"></div>
+                    <div class="button">
+                        <button><a href="https://jstreasure-production-0ead.up.railway.app/">View Project</a></button>
+                    </div>
+                </div>
+                <div class="proj-thumbnail-wrap">
+                    <div class="proj_thumbnail">
+                        <img src="images/treasurejs.png" alt="Treasure Management System thumbnail">
+                    </div>
+                </div>
             </div>
-            
+
+            <!-- Project Card 2 -->
             <div class="projectcard">
-                <div class="details">
+                <div class="projectcard-details">
+                    <div class="project-index">02</div>
                     <h3>Package Management System</h3>
-                    <p class="description">Developed a full-featured online shopping website with product browsing, cart, and secure checkout.</p>
-                    <p><strong>Technologies:</strong> Java, JavaScript, HTML, CSS, MySQL</p>
-                    <div class="button"><button><a href="#" class="btn">View Project</a></button></div>
+                    <p class="description">
+                        Developed a full-featured package delivery system with real-time tracking,
+                        driver management, and an admin dashboard for monitoring dispatches and deliveries.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>MySQL</span>
                     </div>
-                <div class="proj_thumbnail"><img src="images/projectthumb.png" alt="project thumbnail"></div>
+                    <div class="button">
+                        <button><a href="#">View Project</a></button>
+                    </div>
+                </div>
+                <div class="proj-thumbnail-wrap">
+                    <div class="proj_thumbnail">
+                        <img src="images/projectthumb.png" alt="Package Management System thumbnail">
+                    </div>
+                </div>
             </div>
-            
+
+            <!-- Project Card 3 -->
             <div class="projectcard">
-                <div class="details">
-                    <h3>Online shopping Layout</h3>
-                    <p class="description">Developed a full-featured online shopping website with product browsing, cart, and secure checkout.</p>
-                    <p><strong>Technologies:</strong> Java, JavaScript, HTML, CSS, MySQL</p>
-                    <div class="button"><button><a href="#" class="btn">View Project</a></button></div>
+                <div class="projectcard-details">
+                    <div class="project-index">03</div>
+                    <h3>Online Shopping Layout</h3>
+                    <p class="description">
+                        Developed a full-featured online shopping website with product browsing,
+                        cart management, and a secure checkout flow — optimized for both desktop and mobile.
+                    </p>
+                    <div class="tech-tags">
+                        <span>Java</span>
+                        <span>JavaScript</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>MySQL</span>
                     </div>
-                <div class="proj_thumbnail"><img src="images/projectthumb.png" alt="project thumbnail"></div>
+                    <div class="button">
+                        <button><a href="#">View Project</a></button>
+                    </div>
+                </div>
+                <div class="proj-thumbnail-wrap">
+                    <div class="proj_thumbnail">
+                        <img src="images/projectthumb.png" alt="Online Shopping Layout thumbnail">
+                    </div>
+                </div>
             </div>
-            
+
         </div>
 
         <div class="skills" id="skills">
             <h3>Skills Learned</h3>
             <ul class="skill">
-                <li><i class="fa-brands fa-java"> </i> Java</li>
-                <li><i class="fa-brands fa-python"> </i> Python</li>
-                <li><i class="fa-brands fa-js"> </i> JavaScript</li>
-                <li><i class="fa-brands fa-node"> </i> NodeJs</li>
-                <li><i class="fa-brands fa-html5"> </i> Html</li>
-                <li><i class="fa-brands fa-css"> </i> Css</li>
-                <li><i class="fa-brands fa-github"> </i> Github</li>
-                <li><i class="fa-solid fa-database"> </i> Mysql</li>
+                <li><i class="fa-brands fa-java"></i> Java</li>
+                <li><i class="fa-brands fa-python"></i> Python</li>
+                <li><i class="fa-brands fa-js"></i> JavaScript</li>
+                <li><i class="fa-brands fa-node"></i> NodeJs</li>
+                <li><i class="fa-brands fa-html5"></i> Html</li>
+                <li><i class="fa-brands fa-css"></i> Css</li>
+                <li><i class="fa-brands fa-github"></i> Github</li>
+                <li><i class="fa-solid fa-database"></i> Mysql</li>
             </ul>
         </div>
 
         <div class="contacts" id="contacts">
             <h2>Contact Me</h2>
 
-          <!-- modify this form HTML and place wherever you want your form -->
             <form id="my-form" action="https://formspree.io/f/xzdkpkqz" method="POST">
                 <input type="hidden" name="_subject" value="New message from portfolio">
-                
-                    <label>Email:</label>
-                    <input type="email" name="email" required />
-                    <p>This will help me repond to you via email</p>
-            
-                    <label>Message:</label>
-                    <textarea name="message" id="" required></textarea>
-                    <p>What would you like to discuss?</p>
-                
+
+                <label>Email:</label>
+                <input type="email" name="email" required />
+                <p>This will help me respond to you via email</p>
+
+                <label>Message:</label>
+                <textarea name="message" id="" required></textarea>
+                <p>What would you like to discuss?</p>
 
                 <button id="my-form-button">Submit</button>
                 <p id="my-form-status"></p>
@@ -898,7 +1031,7 @@
 
     <footer>
         <div class="copyrights">
-            <div class="logo"> <img src="images/logo.svg" alt="logo" >   </div>
+            <div class="logo"><img src="images/logo.svg" alt="logo"></div>
             <p>&copy; <span id="year"></span> DN. Built with passion.</p>
         </div>
 
@@ -908,85 +1041,84 @@
                 <a href="#"><i class="fa-brands fa-github"></i></a>
                 <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                <a href="#"><i class="fa-brands fa-facebook"></i></a>       
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
             </div>
         </div>
     </footer>
 
     <script>
         // ===================== YEAR =====================
-
         document.getElementById('year').textContent = new Date().getFullYear();
 
         // ===================== THEME TOGGLE =====================
         const html = document.documentElement;
         const themeToggle = document.getElementById('themeToggle');
-        
-        // Load saved preference
+        const heroImg = document.getElementById('heroImg');
+
+        // Load saved preference and apply correct hero image on page load
         const savedTheme = localStorage.getItem('theme') || 'light';
         html.setAttribute('data-theme', savedTheme);
+        if (heroImg) heroImg.src = heroImg.dataset[savedTheme];
 
         themeToggle.addEventListener('click', () => {
             const current = html.getAttribute('data-theme');
             const next = current === 'light' ? 'dark' : 'light';
             html.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
+
+            // Swap hero image
+            if (heroImg) heroImg.src = heroImg.dataset[next];
         });
 
         // ===================== MOBILE NAV =====================
+        const bars = document.getElementById('bars');
+        const nav = document.getElementById('Smallnavigations');
+        const links = document.querySelectorAll('#Smallnavigations a');
 
-        const bars=document.getElementById('bars');
-        const nav=document.getElementById('Smallnavigations');
-        const links=document.querySelectorAll('#Smallnavigations a');
-
-        bars.addEventListener('click',()=>{
-
-            if(nav.style.display === "none"){
-                nav.style.display='flex';
+        bars.addEventListener('click', () => {
+            if (nav.style.display === "none") {
+                nav.style.display = 'flex';
             } else {
-                nav.style.display="none";
+                nav.style.display = "none";
             }
-        })
+        });
 
         links.forEach(link => {
-            link.addEventListener('click',()=>{
-                nav.style.display='none';
-            })
-        })
+            link.addEventListener('click', () => {
+                nav.style.display = 'none';
+            });
+        });
 
-      /*   contact me formspree submission */
-
+        // ===================== CONTACT FORM (Formspree) =====================
         var form = document.getElementById("my-form");
-  
+
         async function handleSubmit(event) {
             event.preventDefault();
             var status = document.getElementById("my-form-status");
             var data = new FormData(event.target);
             fetch(event.target.action, {
-            method: form.method,
-            body: data,
-            headers: {
-                'Accept': 'application/json'
-            }
+                method: form.method,
+                body: data,
+                headers: { 'Accept': 'application/json' }
             }).then(response => {
-            if (response.ok) {
-                status.innerHTML = "Thanks for your submission!";
-                form.reset()
-            } else {
-                response.json().then(data => {
-                if (Object.hasOwn(data, 'errors')) {
-                    status.innerHTML = data["errors"].map(error => error["message"]).join(", ")
+                if (response.ok) {
+                    status.innerHTML = "Thanks for your submission!";
+                    form.reset();
                 } else {
-                    status.innerHTML = "Oops! There was a problem submitting your form"
+                    response.json().then(data => {
+                        if (Object.hasOwn(data, 'errors')) {
+                            status.innerHTML = data["errors"].map(error => error["message"]).join(", ");
+                        } else {
+                            status.innerHTML = "Oops! There was a problem submitting your form";
+                        }
+                    });
                 }
-                })
-            }
-            }).catch(error => {
-            status.innerHTML = "Oops! There was a problem submitting your form"
+            }).catch(() => {
+                status.innerHTML = "Oops! There was a problem submitting your form";
             });
         }
-        form.addEventListener("submit", handleSubmit)
 
+        form.addEventListener("submit", handleSubmit);
     </script>
 </body>
 </html>
